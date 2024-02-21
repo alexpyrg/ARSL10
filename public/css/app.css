@@ -356,6 +356,20 @@ table {
     }
   }
 
+  .general-form{
+    display: block;
+    position: relative;
+    margin:0;
+    padding:0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+
+
+
+
+
   @media screen and (max-width: 900px) {
     .flex-row{
         display: flex;
@@ -386,4 +400,5 @@ table {
             transform: translate(50%, 50%);
             box-sizing: border-box;
         }
+
   }

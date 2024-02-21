@@ -20,8 +20,8 @@
             <input type="password" placeholder="A very strong password!" name="password" id="password">
         </div>
         <div class="input-group">
-            <label for="corfirm_password">Confirm Password:</label>
-            <input type="password" placeholder="Type that password again here!" name="confirm_password" id="confirm_password">
+            <label for="password_confirmation">Confirm Password:</label>
+            <input type="password" placeholder="Type that password again here!" name="password_confirmation" id="password_confirmation">
         </div>
             <div class="input-group" id="remember_me">
                 <label for="accept_tos" id="remember_me_label"><input type="checkbox" name="accept_tos" id="accept_tos">Αποδέχομαι τους <a href="/terms-of-service">όρους και προϋποθέσεις</a>. </label>

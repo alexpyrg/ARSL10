@@ -3,11 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class StreetController extends Controller
 {
     function loadStreetForm(){
         //load Street form as long as the user is logged in.
+        if(Auth::user()){
+
+            return view('streetsForm');
+        }
+        else{
+            return redirect('/login')->withErrors('generalError','You must be logged-in in order to do that!');
+        }
     }
 
     function editStreetForm(){
@@ -26,7 +34,7 @@ class StreetController extends Controller
     }
 
     function editStreet(){
-        //after a PUT requiest with Street id in the url,
+        //after a PUT request with Street id in the url,
         //parse the changed data,
         //validate em and edit the Street.
 
