@@ -39,6 +39,7 @@ class UserController extends Controller
         //otherwise create new user and LOG THEM IN.
 
 
+
     }//authRegister
 
 

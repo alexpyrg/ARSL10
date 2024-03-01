@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccidentController;
+use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\StreetController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VehicleController;
@@ -17,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard')->name('index');
-});
+// Route::get('/', function () {
+//     return view('dashboard');
+// });
 
 
 // Route::get('/login', function(){
@@ -28,6 +29,11 @@ Route::get('/', function () {
 // Route::get('/register', function(){
 //     return view('register');
 // });
+Route::controller(GeneralController::class)->group(function(){
+    Route::get('/', 'loadDashboard')->name('dashboard')->middleware('auth');
+});
+
+
 Route::controller(UserController::class)->group(function (){
     Route::get('/login', 'loadLoginForm')->name('login');
     Route::get('/register', 'loadRegisterForm')->name('register');

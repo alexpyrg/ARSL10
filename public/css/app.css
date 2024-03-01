@@ -5,7 +5,7 @@
     --main-background: #191a25;
     --main-element-background: #353644;
     --whitecream-color: #fffbeb;
-    --main-accent: #db456d;
+    --main-accent: #c0395d;
     --sidebar-bg: #212331;
     --gray-font: #d6d6d6;
     --test-color: #658252;
@@ -97,6 +97,7 @@ body{
     margin-bottom: .5rem;
     box-sizing: border-box;
     overflow: hidden;
+    min-height: 4.3rem!important;
 }
 .user-profile-banner > h3{
     margin-inline: .4rem;
@@ -144,6 +145,8 @@ body{
     box-sizing: border-box;
     padding:0;
     margin-right: 4rem;
+    min-height: fit-content!important;
+    height: fit-content;
     align-items: center ;
     height: 100%;
    box-sizing: border-box;
