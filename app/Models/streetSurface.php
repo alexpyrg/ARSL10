@@ -5,9 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class roadSpeedLimitingFacility extends Model
+class streetSurface extends Model
 {
+    protected $table = 'streetSurface';
     use HasFactory;
-
-    public $timestamps = false;
 }

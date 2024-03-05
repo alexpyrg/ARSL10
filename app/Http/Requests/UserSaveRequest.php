@@ -11,7 +11,7 @@ class UserSaveRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,7 +25,7 @@ class UserSaveRequest extends FormRequest
             'email' => 'required|email|unique:users',
             'first_name' => 'required',
             'last_name' => 'required',
-            'password' => 'required|confirmed|min:10'
+            'password' => 'required|confirmed|min:10|unique:users,email'
         ];
     }
 

@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class vehicleAbs extends Model
 {
     use HasFactory;
-
-    // public function Vehicle(){
-    //     $this->hasOne(Vehicle::class);
-    // }
+    protected $table = 'abs';
+    public function Vehicle(){
+        $this->hasOne(Vehicle::class);
+    }
 }

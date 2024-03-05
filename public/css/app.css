@@ -139,6 +139,24 @@ body{
     overflow:hidden;
 
 }
+.dropdown-content{
+    background-color: var(--main-background);
+    display: flex;
+    flex-direction: column;
+    text-align:left;
+    height: 0px;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: .3s;
+}
+
+
+.dropdown-content.shown{
+    /* min-height: 200px!important; */
+    height: 200px;
+
+    transition: .3s;
+}
 .display-group-inline{
     display: flex;
     position: relative;

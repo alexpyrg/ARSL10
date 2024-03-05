@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserAuthRequest extends FormRequest
+class EditStreetFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,16 +22,7 @@ class UserAuthRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => 'required',
-            'password' => 'required'
-        ];
-    }
-
-    public function messages(): array
-    {
-        return [
-            'email.required' => 'You must put an Email in the field!',
-            'password.required' => 'You must put a Password in the field!'
+            //
         ];
     }
 }

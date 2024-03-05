@@ -39,10 +39,10 @@ Route::controller(UserController::class)->group(function (){
     Route::get('/register', 'loadRegisterForm')->name('register');
     Route::get('/user/{id}', 'viewUser')->middleware('auth');
     Route::get('/user/edit/{id}', 'editUserForm')->middleware('auth');
+    Route::get('/logout', 'logOut')->middleware('auth');
 
     Route::post('/auth/login', 'authLogin');
     Route::post('/auth/register', 'authRegister');
-
     Route::put('/user/edit/{id}', 'editUser')->middleware('auth');
 
     Route::delete('/user/delete', 'deleteUser')->middleware('auth');
@@ -50,6 +50,7 @@ Route::controller(UserController::class)->group(function (){
 });
 
 Route::controller(StreetController::class)->group(function () {
+    Route::get('/street/new', 'loadStreetForm')->middleware('auth');
     Route::get('/street/{id}', 'fetchStreet')->middleware('auth');
     Route::get('/streets', 'fetchAllStreets')->middleware('auth');
     Route::get('/create/street', 'loadStreetForm')->middleware('auth');
@@ -62,6 +63,7 @@ Route::controller(StreetController::class)->group(function () {
 });
 
 Route::controller(AccidentController::class)->group( function(){
+    Route::get('/accident/new', 'loadAccidentForm')->middleware('auth');
     Route::get('/accident/{id}', 'fetchAccident')->middleware('auth');
     Route::get('/accidents', 'fetchAllAccidents')->middleware('auth');
     Route::get('/create/accident', 'loadAccidentForm')->middleware('auth');
@@ -73,6 +75,7 @@ Route::controller(AccidentController::class)->group( function(){
 });
 
 Route::controller(VehicleController::class)->group(function(){
+    Route::get('/vehicle/new', 'loadVehicleForm')->middleware('auth');
     Route::get('/vehicle/{id}', 'fetchVehicle')->middleware('auth');
     Route::get('/vehicles', 'fetchAllAccidents')->middleware('auth');
     Route::get('/create/vehicle', 'loadVehicleForm')->middleware('auth');

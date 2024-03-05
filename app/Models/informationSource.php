@@ -15,7 +15,7 @@ class informationSource extends Model
         return $this->hasMany(Accident::class,'informationSource', 'id');
     }
 
-    public function road(){
-        return $this->hasMany(Road::class,'informationSource', 'id');
+    public function Street(){
+        return $this->hasMany(Street::class,'informationSource', 'id');
     }
 }

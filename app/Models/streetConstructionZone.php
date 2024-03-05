@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class roadAlignment extends Model
+class streetConstructionZone extends Model
 {
     use HasFactory;
 
     public $timestamps = false;
+    protected $table = 'streetConstructionZone';
 
-    public function road(){
-        $this->hasMany(road::class);
+    public function Street(){
+        $this->hasMany(Street::class);
     }
 }

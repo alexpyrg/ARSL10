@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 @section('form')
-    <form class="auth-form" action="/login/authenticate" method="POST">
+    <form class="auth-form" action="/auth/login" method="POST">
         @csrf
         <h3>Σύνδεση Χρήστη</h3>
         <div class="input-group">

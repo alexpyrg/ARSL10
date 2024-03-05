@@ -5,7 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class roadWeatherConditions extends Model
+class street_type extends Model
 {
     use HasFactory;
+
+    public $timestamps = false;
+
+    public function Street(){
+        $this->hasMany('street');
+    }
 }
