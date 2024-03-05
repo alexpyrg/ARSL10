@@ -21,6 +21,8 @@ class EditStreetFormRequest extends FormRequest
      */
     public function rules(): array
     {
+
+        //must contain all of the names of fields used in the database ->
         return [
             //
         ];

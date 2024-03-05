@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UserAuthRequest;
 use App\Http\Requests\UserSaveRequest;
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -52,6 +53,7 @@ class UserController extends Controller
         //otherwise create new user and LOG THEM IN.
         $formFields = null;
         if($request->validated()){
+            try{
             $formFields = [
                 'email' => $request->get('email'),
                 'first_name' => $request->get('first_name'),
@@ -63,8 +65,12 @@ class UserController extends Controller
             //hashing the password to make sure it's hard to decode in case of any database leaks
             $user = User::create($formFields);
             auth()->login($user);
+        }catch(Exception $ex){
+            dd($ex);
+        }
 
         }else{
+            dd($request->messages());
             return Redirect::back()->withErrors('general_errors', $request->messages());
         }
     }//authRegister

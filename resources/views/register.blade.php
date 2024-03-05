@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 @section('form')
-    <form class="auth-form" action="/login/authenticate" method="POST">
+    <form class="auth-form" action="/auth/register" method="POST">
         <h3> Εγγραφή Χρήστη </h3>
         @csrf
         <div class="input-group">
@@ -8,11 +8,11 @@
             <input type="email" placeholder="ex. johndoe123@mywebmail.com" name="email" id="email">
         </div>
         <div class="input-group">
-            <label for="firstname"> Όνομα: </label>
+            <label for="first_name"> Όνομα: </label>
             <input type="text" placeholder="ex. john" name="firstname" id="firstname">
         </div>
         <div class="input-group">
-            <label for="lastname"> Επώνυμο: </label>
+            <label for="last_name"> Επώνυμο: </label>
             <input type="text" placeholder="ex. doe" name="lastname" id="lastname">
         </div>
         <div class="input-group">
