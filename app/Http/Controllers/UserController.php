@@ -14,14 +14,14 @@ class UserController extends Controller
 {
     function loadLoginForm(){
         if(Auth::user()){
-            return redirect('index');
+            return redirect()->route('index');
         }
         return view('login');
     }//loadLoginForm
 
     function loadRegisterForm(){
         if(Auth::user()){
-            return redirect('index');
+            return redirect()->route('index');
         }
         return view('register');
     }//loadRegisterForm
@@ -48,6 +48,7 @@ class UserController extends Controller
     }//authLogin
 
     function authRegister(UserSaveRequest $request){
+        // return dd($request);
         //validate request, if everything's fine check if user exists.
         //if so then redirect them back with error 'User already exists!'
         //otherwise create new user and LOG THEM IN.
@@ -65,6 +66,7 @@ class UserController extends Controller
             //hashing the password to make sure it's hard to decode in case of any database leaks
             $user = User::create($formFields);
             auth()->login($user);
+            return redirect('/')->with('success_message', 'Επιτυχής εγγραφή! Έχετε συνδεθεί αυτόματα στην σελίδα!');
         }catch(Exception $ex){
             dd($ex);
         }

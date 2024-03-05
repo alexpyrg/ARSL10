@@ -1,19 +1,20 @@
 @extends('layouts.auth')
 @section('form')
-    <form class="auth-form" action="/auth/register" method="POST">
-        <h3> Εγγραφή Χρήστη </h3>
+    <form class="auth-form" action="register/complete" method="POST">
         @csrf
+        <h3> Εγγραφή Χρήστη </h3>
+
         <div class="input-group">
             <label for="email"> E-mail: </label>
             <input type="email" placeholder="ex. johndoe123@mywebmail.com" name="email" id="email">
         </div>
         <div class="input-group">
             <label for="first_name"> Όνομα: </label>
-            <input type="text" placeholder="ex. john" name="firstname" id="firstname">
+            <input type="text" placeholder="ex. john" name="first_name" id="first_name">
         </div>
         <div class="input-group">
             <label for="last_name"> Επώνυμο: </label>
-            <input type="text" placeholder="ex. doe" name="lastname" id="lastname">
+            <input type="text" placeholder="ex. doe" name="last_name" id="last_name">
         </div>
         <div class="input-group">
             <label for="password">Password:</label>

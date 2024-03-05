@@ -30,7 +30,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('register');
 // });
 Route::controller(GeneralController::class)->group(function(){
-    Route::get('/', 'loadDashboard')->name('dashboard')->middleware('auth');
+    Route::get('/', 'loadDashboard')->name('index')->middleware('auth');
 });
 
 
@@ -42,7 +42,7 @@ Route::controller(UserController::class)->group(function (){
     Route::get('/logout', 'logOut')->middleware('auth');
 
     Route::post('/auth/login', 'authLogin');
-    Route::post('/auth/register', 'authRegister');
+    Route::post('/register/complete', 'authRegister');
     Route::put('/user/edit/{id}', 'editUser')->middleware('auth');
 
     Route::delete('/user/delete', 'deleteUser')->middleware('auth');
