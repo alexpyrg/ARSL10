@@ -35,7 +35,9 @@ class UserSaveRequest extends FormRequest
             'email.required' => 'You must user a valid E-mail!',
             'first_name.required' => 'You must put your First Name in!',
             'last_name.required' => 'You must put your Last Name in!',
-            'password.required' => 'You must put a valid password in!'
+            'password.required' => 'You must put a valid password in!',
+            'password.confirmed' => 'You must confirm the password!',
+            'password.min' => 'Your password must be at least 10 characters long!'
         ];
     }
 }

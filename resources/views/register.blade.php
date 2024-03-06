@@ -1,6 +1,11 @@
 @extends('layouts.auth')
 @section('form')
-    <form class="auth-form" action="register/complete" method="POST">
+
+    @error('general_errors')
+        Error: {{$message}}
+    @enderror
+
+    <form class="auth-form" action="/register/complete" method="POST">
         @csrf
         <h3> Εγγραφή Χρήστη </h3>
 

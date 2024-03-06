@@ -41,6 +41,7 @@ Route::controller(UserController::class)->group(function (){
     Route::get('/user/edit/{id}', 'editUserForm')->middleware('auth');
     Route::get('/logout', 'logOut')->middleware('auth');
 
+
     Route::post('/auth/login', 'authLogin');
     Route::post('/register/complete', 'authRegister');
     Route::put('/user/edit/{id}', 'editUser')->middleware('auth');
