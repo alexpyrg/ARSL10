@@ -6,8 +6,8 @@
          <h3>{{ 'Αρχική'}}</h3>
 
          <span class="display-group-inline">
-            <h4>{{ 'Όνομα Χρήστη'}}<br><span class="role-text">Registrar</span></h4>
-            <img src="{{ asset('images/test.jpg')}}" alt="Image error." />
+            <h4>{{ Auth::user()->first_name . ' ' . Auth::user()->last_name}}<br><span class="role-text">{{ $userRole }}</span></h4>
+            <img src="{{ asset('images/profile-user.png')}}" alt="Image error." />
          </span>
         </div>
 

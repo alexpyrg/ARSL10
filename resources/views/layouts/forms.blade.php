@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Site Description">
     <meta name="keywords" content="thesis, keys">
-
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css')}}">
 
     <title>{{'Form Name | Create new %__TYPENAME__% '}}</title>
 </head>

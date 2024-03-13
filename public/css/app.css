@@ -13,6 +13,7 @@
     --test-color-3:  #004c98;
 
     --test-color-4:  #d14168;
+    --test-color-5: #efcaf0;
 }
 
 
@@ -385,6 +386,136 @@ table {
     width: 100%;
     box-sizing: border-box;
   }
+/*
+
+*  ΕΔΩ ΞΕΚΙΝΑ ΤΟ STYLING ΓΙΑ ΤΙΣ ΦΟΡΜΕΣ
+
+*/
+  .form-main{
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width:100%;
+    min-height: fit-content;
+
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-width: 2560px;
+    width: 100%;
+    margin:0;
+    padding:0;
+    border: 10px solid red;
+    overflow-x: hidden;
+    overflow-y: scroll ;
+    max-width: 100vw;
+    min-width: 100vw;
+}
+
+/*
+* form-main is displayed as flex and direction of columns >
+* form-row displayed as flex and direction row which contains form-input-group,
+* form-input-group is displayed as flex with COLUMN direction, and contains
+* a label and an input above is the label and under is the input.
+
+*/
+
+.form-row{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+
+    height: fit-content;
+    border:1px solid beige;
+    width: 100%;
+    min-width: 100%;
+    margin:0;
+    padding: 0;
+    justify-content: center;
+
+}
+
+.form-row.fields-1 > *{
+    width:100%;
+    max-width: 100%;
+}
+
+.form-row.fields-1 > select{
+    min-width: 95vw !important;
+}
+
+.form-row.fields-2 > *{
+    width:49%;
+    max-width: 50%;
+}
+
+.form-row.fields-3 > *{
+    width:32%;
+    max-width: 33%;
+}
+
+.form-row.fields-4 > *{
+    width:24%;
+    max-width: 25%;
+}
+
+.form-row.fields-5 > *{
+    width:19%;
+    max-width: 20%;
+}
+
+.form-input-group{
+    display: flex;
+    flex-direction: column ;
+    position: relative;
+    max-width: 33%;
+    margin:0;
+    padding:0;
+    width: 30%;
+}
+
+.form-main > label {
+    display: block;
+    position: relative;
+    margin: 0;
+
+    /* padding-inline: .3rem; */
+}
+
+.form-main > input {
+    display: block;
+    position: relative;
+    margin:0;
+
+    padding-inline: .3rem;
+}
+
+.form-main > input[type=text] {
+    border-bottom: 1px solid var(--main-accent);
+    color: whitesmoke;
+    font-size: 16px;
+
+    padding-inline: .3rem;
+
+}
+
+.form-main > input[type=submit]{
+    border: 1px solid transparent;
+    background-color: var(--main-accent);
+    color: whitesmoke;
+    padding-inline: .3rem;
+
+
+}
+
+.form-main > select {
+    border: 1px solid var(--main-accent);
+    background-color: var(--main-element-background);
+    padding-inline: .3rem;
+}
 
 
 
