@@ -10,7 +10,8 @@ class vehicleCss extends Model
     use HasFactory;
 
 
-    // public function Vehicle(){
-    //     $this->hasOne(Vehicle::class);
-    // }
+    protected $table = 'css';
+    public function Vehicle(){
+        $this->hasOne(Vehicle::class);
+    }
 }

@@ -11,6 +11,8 @@ class informationSource extends Model
 
     public $timestamps = false;
 
+    protected $table = 'InformationSource';
+
     public function accident(){
         return $this->hasMany(Accident::class,'informationSource', 'id');
     }

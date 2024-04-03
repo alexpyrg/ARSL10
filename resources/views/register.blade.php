@@ -4,6 +4,18 @@
     @error('general_errors')
         Error: {{$message}}
     @enderror
+    @error('password')
+    Error: {{$message}}
+    @enderror
+    @error('email')
+    Error: {{$message}}
+    @enderror
+    @error('first_name')
+    Error: {{$message}}
+    @enderror
+    @error('last_name')
+    Error: {{$message}}
+    @enderror
 
     <form class="auth-form" action="/register/complete" method="POST">
         @csrf

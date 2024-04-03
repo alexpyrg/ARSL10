@@ -10,7 +10,8 @@ class vehicleCdc4 extends Model
     use HasFactory;
 
 
-    // public function Vehicle(){
-    //     $this->hasOne(Vehicle::class);
-    // }
+    protected $table = 'cdc4';
+    public function Vehicle(){
+        $this->hasOne(Vehicle::class);
+    }
 }

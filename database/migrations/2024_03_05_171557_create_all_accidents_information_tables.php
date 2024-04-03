@@ -25,14 +25,14 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->longText('description');
-            $table->integer('description_order');
+            $table->integer('descriptionorder');
             $table->longText('collision_type');
         });
-        Schema::create('accidentFirstHarmfulEvent', function (Blueprint $table) {
+        Schema::create('accidentFirstCollisionEvent', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->longText('description');
-            $table->integer('description_order');
+            $table->integer('descriptionorder');
             $table->longText('collision_type');
         });
         Schema::create('accidentGADASType', function(Blueprint $table){
@@ -45,16 +45,57 @@ return new class extends Migration
             $table->timestamps();
             $table->longText('description');
         });
-        Schema::create('accidentRelatedFactor', function(Blueprint $table){
+        Schema::create('accidentRelatedFactors', function(Blueprint $table){
             $table->id();
             $table->longText('description');
             $table->timestamps();
         });
-        Schema::create('accident', function(Blueprint $table){
+        Schema::create('accidentAnimalCollision', function(Blueprint $table){
             $table->id();
             $table->longText('description');
             $table->timestamps();
         });
+
+        Schema::create('accidentEventSequence', function(Blueprint $table){
+            $table->id();
+            $table->longText('description');
+            $table->integer('descriptionorder');
+            $table->longText('collision_type');
+        });
+        Schema::create('accidentNarcotics', function(Blueprint $table){
+            $table->id();
+            $table->longText('description');
+            $table->timestamps();
+        });
+        Schema::create('accidentAbandonedVictim', function(Blueprint $table){
+            $table->id();
+            $table->longText('description');
+            $table->timestamps();
+        });
+        Schema::create('accidentAlcohol', function(Blueprint $table){
+            $table->id();
+            $table->longText('description');
+            $table->timestamps();
+        });
+
+        Schema::create('InformationSource', function(Blueprint $table){
+            $table->id();
+            $table->longText('description');
+            $table->timestamps();
+        });
+
+        Schema::create('InvestigationMethod', function(Blueprint $table){
+            $table->id();
+            $table->longText('description');
+            $table->timestamps();
+        });
+
+        Schema::create('TrustLevel', function(Blueprint $table){
+            $table->id();
+            $table->longText('description');
+            $table->timestamps();
+        });
+
     }
 
     /**
@@ -62,6 +103,20 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('all_accidents_information_tables');
+        Schema::dropIfExists('accidentMostHarmfulEvent');
+        Schema::dropIfExists('accidentFirstHarmfulEvent');
+        Schema::dropIfExists('accidentGADASType');
+        Schema::dropIfExists('accidentSeverity');
+        Schema::dropIfExists('accidentRelatedFactor');
+        Schema::dropIfExists('accidentAnimal');
+        Schema::dropIfExists('accidentEventSequence');
+        Schema::dropIfExists('accidentNarcotics');
+        Schema::dropIfExists('accidentAbandonedVictim');
+        Schema::dropIfExists('accidentAlcohol');
+
+        Schema::dropIfExists('InformationSources');
+        Schema::dropIfExists('InvestigationMethods');
+        Schema::dropIfExists('TrustLevels');
+
     }
 };

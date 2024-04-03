@@ -9,7 +9,7 @@ class vehicleManufacturer extends Model
 {
     use HasFactory;
     protected $table = 'vehicleManufacturer';
-
+    protected $primaryKey = 'id';
     // public function Vehicle(){
     //     $this->hasOne(Vehicle::class);
     // }

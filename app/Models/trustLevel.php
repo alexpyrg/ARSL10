@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class trustLevel extends Model
 {
     use HasFactory;
+
+    protected $table = 'TrustLevel';
 }

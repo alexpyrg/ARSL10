@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class accidentGadasSort extends Model
+class accidentRelatedFactors extends Model
 {
     use HasFactory;
 
-    public $timestamps = false;
-    protected $table='accidentGADASType';
+    protected $table = 'accidentRelatedFactors';
+
     public function accident(){
-      return  $this->hasMany(Accident::class, 'accidentGADAS_id');
+        return  $this->hasMany(Accident::class, 'accidentRelatedFactors');
     }
 }

@@ -67,9 +67,9 @@ Route::controller(AccidentController::class)->group( function(){
     Route::get('/accident/new', 'loadAccidentForm')->middleware('auth');
     Route::get('/accident/{id}', 'fetchAccident')->middleware('auth');
     Route::get('/accidents', 'fetchAllAccidents')->middleware('auth');
-    Route::get('/create/accident', 'loadAccidentForm')->middleware('auth');
+    Route::get('/accident/create', 'loadAccidentForm')->middleware('auth');
 
-    Route::post('/accident/create', 'saveAccident')->middleware('auth');
+    Route::post('/accident/store', 'saveAccident')->middleware('auth');
     Route::put('/accident/{id}/edit', 'editAccident')->middleware('auth');
 
     Route::delete('/accident/delete/{id}', 'deleteAccident')->middleware('auth');

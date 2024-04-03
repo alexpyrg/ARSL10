@@ -10,7 +10,8 @@ class vehicleEsp extends Model
     use HasFactory;
 
 
-    // public function Vehicle(){
-    //     $this->hasOne(Vehicle::class);
-    // }
+    protected $table = 'esp';
+    public function Vehicle(){
+        $this->hasOne(Vehicle::class);
+    }
 }

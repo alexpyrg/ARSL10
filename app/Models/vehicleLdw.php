@@ -10,7 +10,8 @@ class vehicleLdw extends Model
     use HasFactory;
 
 
-    // public function Vehicle(){
-    //     $this->hasOne(Vehicle::class);
-    // }
+    protected $table = 'ldw';
+    public function Vehicle(){
+        $this->hasOne(Vehicle::class);
+    }
 }

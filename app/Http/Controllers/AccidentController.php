@@ -6,6 +6,19 @@ use App\Http\Requests\AccidentFormSubmitRequest;
 use App\Http\Requests\EditAccidentFormRequest;
 use App\Http\Requests\EditAccidentRequest;
 use App\Models\Accident;
+use App\Models\accidentAbandonedVictim;
+use App\Models\accidentAlcohol;
+use App\Models\accidentAnimal;
+use App\Models\accidentEventSequence;
+use App\Models\accidentFirstCollisionEvent;
+use App\Models\accidentGadasSort;
+use App\Models\accidentMostHarmfulEvent;
+use App\Models\accidentNarcotics;
+use App\Models\accidentRelatedFactors;
+use App\Models\accidentSeverity;
+use App\Models\informationSource;
+use App\Models\investigationMethod;
+use App\Models\trustLevel;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,8 +28,57 @@ class AccidentController extends Controller
 {
     function loadAccidentForm(){
         //load accident form as long as the user is logged in.
+        $user = Auth::user();
+        $userid = $user->id;
+        $caseNumber                   = DB::select('select id from accidents ORDER BY id DESC LIMIT 1');
+        // if($caseNumber)
+        // $caseNumber = 1234455;
+        $caseNumber = intval($caseNumber);
+        $caseNumber +=1;
+        $accidentSeverities           = accidentSeverity::all();
+        $accidentAbandonedVictims     = accidentAbandonedVictim::all();
+        $accidentAlcohols             = accidentAlcohol::all();
+        $accidentAnimalCollisions     = accidentAnimal::all();
+        $accidentEventSequences       = accidentEventSequence::all();
+        $accidentFirstCollisionEvents = accidentFirstCollisionEvent::all();
+        $accidentGADAs                = accidentGadasSort::all();
+        $accidentIMTrustLevels        = trustLevel::all();
+        $accidentISTrustLevels        = $accidentIMTrustLevels;
+        $accidentInformationSources   = informationSource::all();
+        $accidentInvestigationMethods = investigationMethod::all();
+        $accidentMostHarmfulEvents    = accidentMostHarmfulEvent::all();
+        $accidentNarcotics            = accidentNarcotics::all();
+        $accidentRelatedFactors       = accidentRelatedFactors::all();
+
+
+
+
         if(Auth::user()){
-            return view('accidentsForm');
+            return view('accidentsForm',
+
+            ['accidentSeverities'=>$accidentSeverities,
+            'accidentAbandonedVictims'=>$accidentAbandonedVictims,
+            'accidentAlcohols'=>$accidentAlcohols,
+            'accidentAnimalCollisions'=>$accidentAnimalCollisions,
+            'accidentEventSequences'=>$accidentEventSequences,
+            'accidentFirstCollisionEvents'=>$accidentFirstCollisionEvents,
+            'accidentGADAs'=>$accidentGADAs,
+            'accidentIMTrustLevels'=>$accidentIMTrustLevels,
+            'accidentISTrustLevels'=>$accidentISTrustLevels,
+            'accidentInformationSources'=>$accidentInformationSources,
+            'accidentInvestigationMethods'=>$accidentInvestigationMethods,
+            'accidentMostHarmfulEvents'=>$accidentMostHarmfulEvents,
+            'accidentNarcotics'=>$accidentNarcotics,
+            'accidentRelatedFactors'=>$accidentRelatedFactors,
+            'caseNumber'=>$caseNumber+1,
+            'userid'=>$userid,
+            'description' => 'test',
+            'keywords' => 'test kw',
+            'formTitle'=> 'Νές Εγγραφή'
+            ]
+
+
+        );
         }
         else
         {

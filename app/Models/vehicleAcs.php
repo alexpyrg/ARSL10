@@ -9,8 +9,9 @@ class vehicleAcs extends Model
 {
     use HasFactory;
 
-    // public function Vehicle(){
-    //     $this->hasOne(Vehicle::class);
-    // }
+    protected $table = 'acs';
+    public function Vehicle(){
+        $this->hasOne(Vehicle::class);
+    }
 
 }

@@ -73,15 +73,15 @@ return new class extends Migration
             $table->foreign('accidentAlcohol_id')->references('id')->on('accidentAlcohol');
             $table->foreign('accidentAbandonedVictim_id')->references('id')->on('accidentAbandonedVictim');
             $table->foreign('accidentAnimalCollision_id')->references('id')->on('accidentAnimalCollision');
-            $table->foreign('accidentGADAS_id')->references('id')->on('accidentGADAS');
+            $table->foreign('accidentGADAS_id')->references('id')->on('accidentGADASType');
             $table->foreign('accidentEventSequence_id')->references('id')->on('accidentEventSequence');
             $table->foreign('accidentFirstCollisionEvent_id')->references('id')->on('accidentFirstCollisionEvent');
             $table->foreign('accidentMostHarmfulEvent_id')->references('id')->on('accidentMostHarmfulEvent');
             $table->foreign('accidentRelatedFactors_id')->references('id')->on('accidentRelatedFactors');
             $table->foreign('InformationSource_id')->references('id')->on('InformationSource');;
-            $table->foreign('informationSourceTrustLevel_id')->references('id')->on('informationSourceTrustLevel');
+            $table->foreign('informationSourceTrustLevel_id')->references('id')->on('TrustLevel');
             $table->foreign('InvestigationMethod_id')->references('id')->on('InvestigationMethod');
-            $table->foreign('InvestigationMethodTrustLevel_id')->references('id')->on('InvestigationMethodTrustLevel');
+            $table->foreign('InvestigationMethodTrustLevel_id')->references('id')->on('TrustLevel');
             $table->foreign('user_id')->references('id')->on('users');
         });
 

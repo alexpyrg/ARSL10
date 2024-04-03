@@ -59,7 +59,8 @@ class UserController extends Controller
                 'email' => $request->get('email'),
                 'first_name' => $request->get('first_name'),
                 'last_name' => $request->get('last_name'),
-                'password' => $request->get('password')
+                'password' => $request->get('password'),
+                'role_id' => '1',
             ];
 
             $formFields['password'] = bcrypt($formFields['password']);

@@ -52,14 +52,14 @@ return new class extends Migration
 
         Schema::table('streets', function($table){
             $table->foreign('InvestigationMethod_id')->references('id')->on('InvestigationMethod');
-            $table->foreign('InvestigationMethodTrustLevel_id')->references('id')->on('InvestigationMethodTrustLevel');
+            $table->foreign('InvestigationMethodTrustLevel_id')->references('id')->on('TrustLevel');
             $table->foreign('InformationSource_id')->references('id')->on('InformationSource');
-            $table->foreign('InformationSourceTruestLevel_id')->references('id')->on('InformationSourceTrustLevel');
+            $table->foreign('InformationSourceTruestLevel_id')->references('id')->on('TrustLevel');
             $table->foreign('streetPollutants_id')->references('id')->on('streetPollutants');
             $table->foreign('streetTransientConstraints_id')->references('id')->on('streetTransientConstraints');
             $table->foreign('streetSignalingFactors_id')->references('id')->on('streetSignalingFactors');
             $table->foreign('streetSpeedLimitingFacility_id')->references('id')->on('streetSpeedLimitingFacility');
-            $table->foreign('streetSLIContributedToCollision_id')->references('id')->on('streetSLIContributedToCollision');
+            $table->foreign('streetSLIContributedToCollision_id')->references('id')->on('streetSLIContributedCollision');
             $table->foreign('streetType_id')->references('id')->on('streetType');
             $table->foreign('streetSpeedLimitType_id')->references('id')->on('streetSpeedLimitType');
             $table->foreign('streetJunction_id')->references('id')->on('streetJunction');
@@ -76,7 +76,8 @@ return new class extends Migration
             $table->foreign('streetStrongWinds_id')->references('id')->on('streetStrongWinds');
             $table->foreign('streetFog_id')->references('id')->on('streetFog');
             $table->foreign('accident_id')->references('id')->on('accidents');
-            $table->foreign('streetTrafficWayFlow_id')->references('id')->on('streetTrafficWayFlow');
+            $table->foreign('streetTrafficWayFlow_id')->references('id')->on('streetTrafficwayFlow');
+
 
         });
 
