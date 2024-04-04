@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\AccidentFormSubmitRequest;
 use App\Http\Requests\EditAccidentFormRequest;
 use App\Http\Requests\EditAccidentRequest;
+use App\Http\Requests\StoreAccidentRequest;
 use App\Models\Accident;
 use App\Models\accidentAbandonedVictim;
 use App\Models\accidentAlcohol;
@@ -110,7 +110,7 @@ class AccidentController extends Controller
         }//if
     }//deleteAccident
 
-    function saveAccident(AccidentFormSubmitRequest $request){
+    function storeAccident(StoreAccidentRequest $request){
         //if user is logged in and the accident validates,
         //then pass the data into the database.
         if(Auth::user() && $request->validated()){
@@ -127,7 +127,7 @@ class AccidentController extends Controller
     function editAccident(EditAccidentRequest $request){
         //after a PUT request with accident id in the url,
         //parse the changed data,
-        //validate em and edit the accident.
+        //validate them and edit the accident.
         if(Auth::user() && $request->validated()){
             DB::table('accidents')
                                 ->where('id', $request->id)

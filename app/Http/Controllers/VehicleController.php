@@ -2,6 +2,34 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\informationSource;
+use App\Models\investigationMethod;
+use App\Models\trustLevel;
+use App\Models\vehicleAbs;
+use App\Models\vehicleAcs;
+use App\Models\vehicleCdc3;
+use App\Models\vehicleCdc4;
+use App\Models\vehicleCollisionOffroadObject;
+use App\Models\vehicleCollisionType;
+use App\Models\vehicleColor;
+use App\Models\vehicleCss;
+use App\Models\vehicleDamagePossibleFactor;
+use App\Models\vehicleDangerousCargo;
+use App\Models\vehicleDrivePosition;
+use App\Models\vehicleEsp;
+use App\Models\vehicleFirefightingEquipmentUsed;
+use App\Models\vehicleInspected;
+use App\Models\vehicleLdw;
+use App\Models\vehicleManufacturer;
+use App\Models\vehicleModel;
+use App\Models\vehicleOnfire;
+use App\Models\vehicleRoadwayAlignment;
+use App\Models\vehicleScatteredDangerousCargo;
+use App\Models\vehicleSwerved;
+use App\Models\vehicleTcs;
+use App\Models\vehicleTrailer;
+use App\Models\vehicleType;
+use App\Models\vehicleWheelDrive;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -12,35 +40,35 @@ class VehicleController extends Controller
         //Fetch from database all required data from vehicleTables
         $userid = auth()->user()->id;
         $accidentID = DB::select('select "accident_id" from accidents');
-        $abs = abs;
-        $acs = DB::select('select * from "ACS_id"');
-        $esp = DB::select('select * from "ESP_id"');
-        $cdc3 = DB::select('select * from "CDC3_id"');
-        $cdc4 = DB::select('select * from "CDC4_id"');
-        $css = DB::select('select * from "CSS_id"');
-        $ldw = DB::select('select * from "LDW_id"');
-        $tcs = DB::select('select * from "TCS_id"');
-        $vehicleCollisionOffroadObject = DB::select('select * from "vehicleCollisionOffroadObject"');
-        $vehicleCollisionType = DB::select('select * from "vehicleCollisionType"');
-        $vehicleColor = DB::select('select * from "vehicleColor"');
-        $vehicleDamagePossibleFactor = DB::select('select * from "vehicleDamagePossibleFactor"');
-        $vehicleDangerousCargo = DB::select('select * from "vehicleDangerousCargo"');
-        $vehicleDrivePosition = DB::select('select * from "vehicleDrivePosition"');
-        $vehicleFirefightingEquipmentUsed = DB::select('select * from "vehicleFireFightingEquipmentUsed"');
-        $vehicleIMTrustLevel = DB::select('select * from "vehicleIMTrustLevel"');
-        $vehicleISTrustLevel = DB::select('select * from "vehicleISTrustLevel"');
-        $vehicleInformationSource = DB::select('select * from "vehicleInformationSource"');
-        $vehicleInspected = DB::select('select * from "vehicleInspected"');
-        $vehicleInvestigationMethod = DB::select('select * from "vehicleInvestigationMethod"');
-        $vehicleManufacturer = DB::select('select * from "vehicleManufacturer"');
-        $vehicleModel = DB::select('select * from "vehicleModel"');
-        $vehicleOnFire = DB::select('select * from "vehicleOnFire"');
-        $vehicleRoadwayAlignment = DB::select('select * from "vehicleRoadwayAlignment"');
-        $vehicleScatteredDangerousCargo = DB::select('select * from "vehicleScatteredDangerousCargo"');
-        $vehicleSwerved = DB::select('select * from "vehicleSwerved"');
-        $vehicleTrailer = DB::select('select * from "vehicleTrailer"');
-        $vehicleType = DB::select('select * from "vehicleType"');
-        $vehicleWheelDrive = DB::select('select * from "vehicleWheelDrive"');
+        $abs = vehicleAbs::all();
+        $acs = vehicleAcs::all();
+        $esp = vehicleEsp::all();
+        $cdc3 = vehicleCdc3::all();
+        $cdc4 = vehicleCdc4::all();
+        $css = vehicleCss::all();
+        $ldw = vehicleLdw::all();
+        $tcs = vehicleTcs::all();
+        $vehicleCollisionOffroadObject = vehicleCollisionOffroadObject::all();
+        $vehicleCollisionType = vehicleCollisionType::all();
+        $vehicleColor = vehicleColor::all();
+        $vehicleDamagePossibleFactor = vehicleDamagePossibleFactor::all();
+        $vehicleDangerousCargo = vehicleDangerousCargo::all();
+        $vehicleDrivePosition = vehicleDrivePosition::all();
+        $vehicleFirefightingEquipmentUsed = vehicleFirefightingEquipmentUsed::all();
+        $vehicleIMTrustLevel = trustLevel::all();
+        $vehicleISTrustLevel= $vehicleIMTrustLevel;
+        $vehicleInformationSource = informationSource::all();
+        $vehicleInspected = vehicleInspected::all();
+        $vehicleInvestigationMethod = investigationMethod::all();
+        $vehicleManufacturer = vehicleManufacturer::all();
+        $vehicleModel = vehicleModel::all();
+        $vehicleOnFire = vehicleOnfire::all();
+        $vehicleRoadwayAlignment = vehicleRoadwayAlignment::all();
+        $vehicleScatteredDangerousCargo = vehicleScatteredDangerousCargo::all();
+        $vehicleSwerved = vehicleSwerved::all();
+        $vehicleTrailer = vehicleTrailer::all();
+        $vehicleType = vehicleType::all();
+        $vehicleWheelDrive = vehicleWheelDrive::all();
         // $vehicle = DB::select('select * from "vehicle"'); //SAMPLE
 
 
@@ -90,7 +118,7 @@ class VehicleController extends Controller
 
     }
 
-    function saveVehicle(){
+    function saveVehicle(StoreVehicleRequest $request){
         //if user is logged in and the Vehicle validates,
         //then pass the data into the database.
 

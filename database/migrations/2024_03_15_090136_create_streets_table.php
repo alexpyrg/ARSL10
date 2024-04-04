@@ -42,7 +42,7 @@ return new class extends Migration
             $table->longText('streetPossibleFactorsComments');
             $table->longText('streetOtherComments');
             $table->integer('InformationSource_id')->unsigned();
-            $table->integer('InformationSourceTruestLevel_id')->unsigned();
+            $table->integer('InformationSourceTrustLevel_id')->unsigned();
             $table->longText('InformationSourceDescription');
             $table->integer('InvestigationMethod_id')->unsigned();
             $table->integer('InvestigationMethodTrustLevel_id')->unsigned();
@@ -54,7 +54,7 @@ return new class extends Migration
             $table->foreign('InvestigationMethod_id')->references('id')->on('InvestigationMethod');
             $table->foreign('InvestigationMethodTrustLevel_id')->references('id')->on('TrustLevel');
             $table->foreign('InformationSource_id')->references('id')->on('InformationSource');
-            $table->foreign('InformationSourceTruestLevel_id')->references('id')->on('TrustLevel');
+            $table->foreign('InformationSourceTrustLevel_id')->references('id')->on('TrustLevel');
             $table->foreign('streetPollutants_id')->references('id')->on('streetPollutants');
             $table->foreign('streetTransientConstraints_id')->references('id')->on('streetTransientConstraints');
             $table->foreign('streetSignalingFactors_id')->references('id')->on('streetSignalingFactors');
