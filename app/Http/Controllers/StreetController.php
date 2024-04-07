@@ -68,10 +68,15 @@ class StreetController extends Controller
         //after a PUT request with Street id in the url,
         //parse the changed data,
         //validate em and edit the Street.
+        $street = Street::find($request->id);
+        $validatedData = $request->validate();
         if(Auth::user() && $request->validated()){
-            DB::table('streets')
-                                ->where('id', $request->id)
-                                ->update(['test'=>$request->test]); //FIX LATER
+            try{
+            $street->fill($validatedData);
+            $street->save();
+            }catch(Exception $ex){
+                return redirect()->back()->withErrors($ex);
+            }
         }
         else{
             return redirect()->back()->withErrors('general_errors',$request->messages());

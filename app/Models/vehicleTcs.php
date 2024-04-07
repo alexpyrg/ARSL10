@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class vehicleTcs extends Model
 {
     use HasFactory;
-
+    protected $table="tcs";
 
     // public function Vehicle(){
     //     $this->hasOne(Vehicle::class);

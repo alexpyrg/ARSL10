@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class vehicleColor extends Model
 {
     use HasFactory;
-
+    protected $table = "vehicleColor";
 
     // public function Vehicle(){
     //     $this->hasOne(Vehicle::class);

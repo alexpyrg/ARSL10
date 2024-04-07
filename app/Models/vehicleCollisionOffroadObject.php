@@ -9,7 +9,7 @@ class vehicleCollisionOffroadObject extends Model
 {
     use HasFactory;
 
-
+    protected $table = "vehicleCollisionOffroadObject";
 //     public function Vehicle(){
 //         $this->hasOne(Vehicle::class);
 //     }

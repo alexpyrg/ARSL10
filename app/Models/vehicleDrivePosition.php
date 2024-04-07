@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class vehicleDrivePosition extends Model
 {
     use HasFactory;
-
+    protected $table = "vehicleDrivePosition";
     // public function Vehicle(){
     //     $this->hasOne(Vehicle::class);
     // }

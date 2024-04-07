@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class vehicleInspected extends Model
 {
     use HasFactory;
-
+    protected $table = "vehicleInspected";
 
 
     // public function Vehicle(){

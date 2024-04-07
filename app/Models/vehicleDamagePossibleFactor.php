@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class vehicleDamagePossibleFactor extends Model
 {
     use HasFactory;
-
+    protected $table = "vehicleDamagePossibleFactor";
 
     // public function Vehicle(){
     //     $this->hasOne(Vehicle::class);

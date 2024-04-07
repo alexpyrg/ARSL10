@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class vehicleFirefightingEquipmentUsed extends Model
 {
     use HasFactory;
-
+    protected $table = "vehicleFirefightingEquipmentUsed";
 
     // public function Vehicle(){
     //     $this->hasOne(Vehicle::class);
